@@ -32,7 +32,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        btnSearch = new javax.swing.JButton();
+        btnConsult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,10 +66,25 @@ public class GamesRegisterView extends javax.swing.JFrame {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-        btnSearch.setText("Search");
+        btnConsult.setText("Consult");
+        btnConsult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,7 +131,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdate)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSearch)
+                        .addComponent(btnConsult)
                         .addGap(26, 26, 26))))
         );
         layout.setVerticalGroup(
@@ -157,7 +172,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
                     .addComponent(btnSave)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete)
-                    .addComponent(btnSearch))
+                    .addComponent(btnConsult))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
 
@@ -216,10 +231,128 @@ public class GamesRegisterView extends javax.swing.JFrame {
          
             JOptionPane.showMessageDialog(null, "Connection Error!!!");
             
-        }       
+        }
+        
+        clean();
                        
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        
+        User user;
+        GamesRegisterDao gamesDao;
+        boolean result;
+        
+        user = new User();
+        user.setName(txtName.getText());
+        
+        gamesDao = new GamesRegisterDao();
+        result = gamesDao.Connect();
+        
+        if(result == true) {
+        
+            result = gamesDao.delete(user);
+            
+            if(result == true) {
+            
+                JOptionPane.showMessageDialog(null, "Game Deleted!!!");
+            
+            } else {
+            
+                JOptionPane.showMessageDialog(null, "Error when try to delete!");
+                }
+            } else {
+                    
+                    JOptionPane.showMessageDialog(null, "Connection Error!!!");
+                    
+                }
+            
+        clean();
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
+        
+        User user;
+        GamesRegisterDao gamesDao;
+        boolean result;
+        String name;
+        
+        name = txtName.getText();
+        
+        gamesDao = new GamesRegisterDao();
+        result = gamesDao.Connect();
+        
+        if(result == true) {
+        
+            user = gamesDao.consult(name);
+            
+            if (user != null) {
+            
+                txtName.setText(user.getName());
+                txtDeveloper.setText(user.getDeveloper());
+                txtLaunchDate.setText(String.valueOf(user.getLaunchDate()));
+                txtSynopsis.setText(user.getSynopsis());
+                txtValue.setText(String.valueOf(user.getValue()));
+                txtPopularity.setText(String.valueOf(user.getPopularity()));
+                txtSize.setText(user.getSize());
+            
+            } else {
+            
+                JOptionPane.showMessageDialog(null, "Game not found!");
+            
+            } 
+            
+        } else {
+            
+                    JOptionPane.showMessageDialog(null, "Connection Error!");
+                    
+            }
+        
+    }//GEN-LAST:event_btnConsultActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        
+        User user;
+        GamesRegisterDao gamesDao;
+        boolean result;
+        
+        user = new User();
+        user.setName(txtName.getText());
+        user.setDeveloper(txtDeveloper.getText());
+        user.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
+        user.setSynopsis(txtSynopsis.getText());
+        user.setValue(Double.parseDouble(txtValue.getText()));
+        user.setPopularity(Integer.parseInt(txtPopularity.getText()));
+        user.setSize(txtSize.getText());
+        
+        gamesDao = new GamesRegisterDao();
+        result = gamesDao.Connect();
+        
+        if(result == true) {
+        
+            result = gamesDao.update(user);
+            
+            if(result == true) {
+            
+                JOptionPane.showMessageDialog(null, "Updated Data!");
+                
+            } else {
+            
+                JOptionPane.showMessageDialog(null, "Save Error!!!");
+            
+            }
+        } else {
+         
+            JOptionPane.showMessageDialog(null, "Connection Error!!!");
+            
+        }
+        
+        clean();
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -253,9 +386,9 @@ public class GamesRegisterView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsult;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDeveloper;
