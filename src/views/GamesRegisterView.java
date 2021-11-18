@@ -2,7 +2,7 @@ package views;
 
 import javax.swing.JOptionPane;
 import persistence.GamesRegisterDao;
-import persistence.User;
+import persistence.Game;
 
 public class GamesRegisterView extends javax.swing.JFrame {
 
@@ -198,25 +198,25 @@ public class GamesRegisterView extends javax.swing.JFrame {
     
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         
-        User user;
+        Game game;
         GamesRegisterDao gamesDao;
         boolean result;
         
-        user = new User();
-        user.setName(txtName.getText());
-        user.setDeveloper(txtDeveloper.getText());
-        user.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
-        user.setSynopsis(txtSynopsis.getText());
-        user.setValue(Double.parseDouble(txtValue.getText()));
-        user.setPopularity(Integer.parseInt(txtPopularity.getText()));
-        user.setSize(txtSize.getText());
+        game = new Game();
+        game.setName(txtName.getText());
+        game.setDeveloper(txtDeveloper.getText());
+        game.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
+        game.setSynopsis(txtSynopsis.getText());
+        game.setValue(Double.parseDouble(txtValue.getText()));
+        game.setPopularity(Integer.parseInt(txtPopularity.getText()));
+        game.setSize(txtSize.getText());
         
         gamesDao = new GamesRegisterDao();
         result = gamesDao.Connect();
         
         if(result == true) {
         
-            result = gamesDao.save(user);
+            result = gamesDao.save(game);
             
             if(result == true) {
             
@@ -239,19 +239,19 @@ public class GamesRegisterView extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         
-        User user;
+        Game game;
         GamesRegisterDao gamesDao;
         boolean result;
         
-        user = new User();
-        user.setName(txtName.getText());
+        game = new Game();
+        game.setName(txtName.getText());
         
         gamesDao = new GamesRegisterDao();
         result = gamesDao.Connect();
         
         if(result == true) {
         
-            result = gamesDao.delete(user);
+            result = gamesDao.delete(game);
             
             if(result == true) {
             
@@ -273,7 +273,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
 
     private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
         
-        User user;
+        Game game;
         GamesRegisterDao gamesDao;
         boolean result;
         String name;
@@ -285,17 +285,17 @@ public class GamesRegisterView extends javax.swing.JFrame {
         
         if(result == true) {
         
-            user = gamesDao.consult(name);
+            game = gamesDao.consult(name);
             
-            if (user != null) {
+            if (game != null) {
             
-                txtName.setText(user.getName());
-                txtDeveloper.setText(user.getDeveloper());
-                txtLaunchDate.setText(String.valueOf(user.getLaunchDate()));
-                txtSynopsis.setText(user.getSynopsis());
-                txtValue.setText(String.valueOf(user.getValue()));
-                txtPopularity.setText(String.valueOf(user.getPopularity()));
-                txtSize.setText(user.getSize());
+                txtName.setText(game.getName());
+                txtDeveloper.setText(game.getDeveloper());
+                txtLaunchDate.setText(String.valueOf(game.getLaunchDate()));
+                txtSynopsis.setText(game.getSynopsis());
+                txtValue.setText(String.valueOf(game.getValue()));
+                txtPopularity.setText(String.valueOf(game.getPopularity()));
+                txtSize.setText(game.getSize());
             
             } else {
             
@@ -313,25 +313,25 @@ public class GamesRegisterView extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         
-        User user;
+        Game game;
         GamesRegisterDao gamesDao;
         boolean result;
         
-        user = new User();
-        user.setName(txtName.getText());
-        user.setDeveloper(txtDeveloper.getText());
-        user.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
-        user.setSynopsis(txtSynopsis.getText());
-        user.setValue(Double.parseDouble(txtValue.getText()));
-        user.setPopularity(Integer.parseInt(txtPopularity.getText()));
-        user.setSize(txtSize.getText());
+        game = new Game();
+        game.setName(txtName.getText());
+        game.setDeveloper(txtDeveloper.getText());
+        game.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
+        game.setSynopsis(txtSynopsis.getText());
+        game.setValue(Double.parseDouble(txtValue.getText()));
+        game.setPopularity(Integer.parseInt(txtPopularity.getText()));
+        game.setSize(txtSize.getText());
         
         gamesDao = new GamesRegisterDao();
         result = gamesDao.Connect();
         
         if(result == true) {
         
-            result = gamesDao.update(user);
+            result = gamesDao.update(game);
             
             if(result == true) {
             

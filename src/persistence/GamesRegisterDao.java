@@ -15,7 +15,7 @@ public class GamesRegisterDao {
     GamesRegisterView gr;
     ResultSet rs;
     
-    public boolean Connect(){
+    public boolean Connect() {
         
         try {
             
@@ -32,7 +32,7 @@ public class GamesRegisterDao {
     
     }
     
-    public boolean save(User user) {
+    public boolean save(Game game) {
     
         try {
             
@@ -40,13 +40,13 @@ public class GamesRegisterDao {
             
             st = conn.prepareStatement("INSERT INTO GAMES VALUES (?, ?, ?, ?, ?, ?, ?)");
             
-            st.setString(1, user.getName());
-            st.setString(2, user.getDeveloper());
-            st.setDouble(3, user.getLaunchDate());
-            st.setString(4, user.getSynopsis());
-            st.setDouble(5, user.getValue());
-            st.setInt(6, user.getPopularity());
-            st.setString(7, user.getSize());
+            st.setString(1, game.getName());
+            st.setString(2, game.getDeveloper());
+            st.setDouble(3, game.getLaunchDate());
+            st.setString(4, game.getSynopsis());
+            st.setDouble(5, game.getValue());
+            st.setInt(6, game.getPopularity());
+            st.setString(7, game.getSize());
             st.executeUpdate();
             
             return true;
@@ -59,14 +59,14 @@ public class GamesRegisterDao {
     
     }
     
-    public boolean delete(User user) {
+    public boolean delete(Game game) {
         
         try {
             
             Connect();
             
             st = conn.prepareStatement("DELETE FROM GAMES WHERE NAME = ?");
-            st.setString(1, user.getName());
+            st.setString(1, game.getName());
             st.executeUpdate();
                         
             return true;
@@ -79,7 +79,7 @@ public class GamesRegisterDao {
         
     }
     
-    public User consult(String name){
+    public Game consult(String name) {
     
         try {
             
@@ -91,17 +91,17 @@ public class GamesRegisterDao {
             
             if(rs.next()) {
             
-                User user;
-                user = new User();
-                user.setName(rs.getString("name"));
-                user.setDeveloper(rs.getString("developer"));
-                user.setLaunchDate(rs.getDouble("launchDate"));
-                user.setSynopsis(rs.getString("synopsis"));
-                user.setValue(rs.getDouble("value"));
-                user.setPopularity(rs.getInt("popularity"));
-                user.setSize(rs.getString("size"));
+                Game game;
+                game = new Game();
+                game.setName(rs.getString("name"));
+                game.setDeveloper(rs.getString("developer"));
+                game.setLaunchDate(rs.getDouble("launchDate"));
+                game.setSynopsis(rs.getString("synopsis"));
+                game.setValue(rs.getDouble("value"));
+                game.setPopularity(rs.getInt("popularity"));
+                game.setSize(rs.getString("size"));
                 
-                return user;
+                return game;
                  
             } else {
             
@@ -118,19 +118,19 @@ public class GamesRegisterDao {
     
     }
     
-    public boolean update(User user) {
+    public boolean update(Game game) {
     
         try {
             Connect();
             
             st = conn.prepareStatement("UPDATE GAMES SET NAME = ?, DEVELOPER = ?, LAUNCHDATE = ?, SYNOPSIS = ?, VALUE = ?, POPULARITY = ?, SIZE = ?");
-            st.setString(1, user.getName());
-            st.setString(2, user.getDeveloper());
-            st.setDouble(3, user.getLaunchDate());
-            st.setString(4, user.getSynopsis());
-            st.setDouble(5, user.getValue());
-            st.setInt(6, user.getPopularity());
-            st.setString(7, user.getSize());            
+            st.setString(1, game.getName());
+            st.setString(2, game.getDeveloper());
+            st.setDouble(3, game.getLaunchDate());
+            st.setString(4, game.getSynopsis());
+            st.setDouble(5, game.getValue());
+            st.setInt(6, game.getPopularity());
+            st.setString(7, game.getSize());            
             st.executeUpdate();
             
             return true;

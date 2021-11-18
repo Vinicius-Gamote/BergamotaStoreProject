@@ -1,6 +1,6 @@
 package persistence;
 
-public class User {
+public class Game {
     
     private String name;
     private String developer;
