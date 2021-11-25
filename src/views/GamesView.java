@@ -5,6 +5,10 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+import persistence.Game;
+import persistence.GamesRegisterDao;
+
 /**
  *
  * @author vinic
@@ -45,6 +49,11 @@ public class GamesView extends javax.swing.JFrame {
         lblLaunchData.setText("Launch Date");
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +112,36 @@ public class GamesView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(434, 294));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        
+        String name;
+        GamesRegisterDao gamesDao;
+        boolean result;
+        Game game;
+        
+        name = txtName.getText();
+        gamesDao = new GamesRegisterDao();
+        result = gamesDao.Connect();
+        
+        if(result == true) {
+        
+            game = gamesDao.consult(name);
+        
+            if(game != null) {
+            
+                txtName.setText(game.getName());
+                txtLaunchDate.setText(String.valueOf(game.getLaunchDate()));
+                txtDeveloper.setText(game.getDeveloper());
+            
+            } else {
+            
+                JOptionPane.showMessageDialog(null, "Consult Error!");
+            
+            }
+        }
+                
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments

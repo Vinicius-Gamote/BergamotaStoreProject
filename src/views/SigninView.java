@@ -5,6 +5,10 @@
  */
 package views;
 
+import persistence.Game;
+import persistence.GamesRegisterDao;
+import persistence.LoginRegisterDao;
+
 /**
  *
  * @author vinic
@@ -135,6 +139,7 @@ public class SigninView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtConfirmPasswordActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
+        
         
     }//GEN-LAST:event_btnSignupActionPerformed
 
