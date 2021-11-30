@@ -48,6 +48,12 @@ public class GamesRegisterView extends javax.swing.JFrame {
             }
         });
 
+        txtSynopsis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSynopsisActionPerformed(evt);
+            }
+        });
+
         lblSynopsis.setText("Synopsis");
 
         lblValue.setText("Value");
@@ -351,6 +357,10 @@ public class GamesRegisterView extends javax.swing.JFrame {
         clean();
         
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void txtSynopsisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSynopsisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSynopsisActionPerformed
 
     
     public static void main(String args[]) {

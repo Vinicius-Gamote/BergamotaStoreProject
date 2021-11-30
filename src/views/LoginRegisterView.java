@@ -3,7 +3,6 @@ package views;
 import javax.swing.JOptionPane;
 import persistence.Login;
 import persistence.LoginRegisterDao;
-import persistence.GamesRegisterDao;
 
 public class LoginRegisterView extends javax.swing.JFrame {
 
@@ -20,42 +19,41 @@ public class LoginRegisterView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblUser = new javax.swing.JLabel();
+        btnConsult = new javax.swing.JButton();
+        lblLogin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        lblConfirmPassword = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
-        txtConfirmPassword = new javax.swing.JPasswordField();
+        txtLogin = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        btnConsult = new javax.swing.JButton();
+
+        btnConsult.setText("Consult");
+        btnConsult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        lblUser.setText("User");
-        getContentPane().add(lblUser);
-        lblUser.setBounds(40, 60, 110, 16);
+        lblLogin.setText("Login");
+        getContentPane().add(lblLogin);
+        lblLogin.setBounds(40, 90, 110, 16);
 
         lblPassword.setText("Password");
         getContentPane().add(lblPassword);
-        lblPassword.setBounds(40, 110, 70, 16);
+        lblPassword.setBounds(40, 140, 70, 16);
 
-        lblConfirmPassword.setText("Confirm Password");
-        getContentPane().add(lblConfirmPassword);
-        lblConfirmPassword.setBounds(40, 160, 110, 16);
-
-        txtUser.addActionListener(new java.awt.event.ActionListener() {
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserActionPerformed(evt);
+                txtLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(txtUser);
-        txtUser.setBounds(190, 60, 160, 22);
-        getContentPane().add(txtConfirmPassword);
-        txtConfirmPassword.setBounds(190, 160, 160, 22);
+        getContentPane().add(txtLogin);
+        txtLogin.setBounds(190, 90, 160, 22);
         getContentPane().add(txtPassword);
-        txtPassword.setBounds(190, 110, 160, 22);
+        txtPassword.setBounds(190, 140, 160, 22);
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +62,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnDelete);
-        btnDelete.setBounds(60, 230, 72, 22);
+        btnDelete.setBounds(100, 220, 72, 22);
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -73,30 +71,20 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnUpdate);
-        btnUpdate.setBounds(160, 230, 72, 22);
-
-        btnConsult.setText("Consult");
-        btnConsult.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnConsult);
-        btnConsult.setBounds(260, 230, 75, 22);
+        btnUpdate.setBounds(200, 220, 72, 22);
 
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
+    }//GEN-LAST:event_txtLoginActionPerformed
 
     public void clean() {
     
-        txtUser.setText("");
+        txtLogin.setText("");
         txtPassword.setText("");
-        txtConfirmPassword.setText("");
     
     }
     
@@ -107,7 +95,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
         boolean result;
         
         login = new Login();
-        login.setUser(txtUser.getText());
+        login.setUser(txtLogin.getText());
         
         loginDao = new LoginRegisterDao();
         result = loginDao.Connect();
@@ -141,9 +129,8 @@ public class LoginRegisterView extends javax.swing.JFrame {
         boolean result;
         
         login = new Login();
-        login.setUser(txtUser.getText());
-        login.setPassword(txtPassword.getText());
-        login.setConfirmPassword(txtConfirmPassword.getText());        
+        login.setUser(txtLogin.getText());
+        login.setPassword(txtPassword.getText());      
         
         loginDao = new LoginRegisterDao();
         result = loginDao.Connect();
@@ -158,7 +145,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
                 
             } else {
             
-                JOptionPane.showMessageDialog(null, "Save Error!!!");
+                JOptionPane.showMessageDialog(null, "Update Error!!!");
             
             }
         } else {
@@ -178,7 +165,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
         boolean result;
         String user;
         
-        user = txtUser.getText();
+        user = txtLogin.getText();
         
         loginDao = new LoginRegisterDao();
         result = loginDao.Connect();
@@ -189,9 +176,8 @@ public class LoginRegisterView extends javax.swing.JFrame {
             
             if (login != null) {
             
-                txtUser.setText(login.getUser());
+                txtLogin.setText(login.getUser());
                 txtPassword.setText(login.getPassword());
-                txtConfirmPassword.setText(login.getConfirmPassword());
             
             } else {
             
@@ -246,11 +232,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnConsult;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel lblConfirmPassword;
+    private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblUser;
-    private javax.swing.JPasswordField txtConfirmPassword;
+    private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

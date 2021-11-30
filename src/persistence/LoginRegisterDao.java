@@ -39,7 +39,6 @@ public class LoginRegisterDao {
                     
             st.setString(1, login.getUser());
             st.setString(2, login.getPassword());
-            st.setString(3, login.getConfirmPassword());
             st.executeUpdate();
                     
             return true;
@@ -58,7 +57,7 @@ public class LoginRegisterDao {
             
             Connect();
             
-            st = conn.prepareStatement("DELETE FROM LOGIN WHERE USER = ? ");
+            st = conn.prepareStatement("DELETE FROM LOGIN WHERE LOGIN = ? ");
             
             st.setString(1, login.getUser());
             st.executeUpdate();
@@ -91,7 +90,6 @@ public class LoginRegisterDao {
                 
                 login.setUser(rs.getString("user"));
                 login.setPassword(rs.getString("password"));
-                login.setConfirmPassword(rs.getString("confirmPassword"));
                 
                 return login;
                 
@@ -115,10 +113,9 @@ public class LoginRegisterDao {
             
             Connect();
             
-            st = conn.prepareStatement("UPDATE LOGIN SET USER = ?, PASSWORD = ?, CONFIRMPASSWORD = ?");
+            st = conn.prepareStatement("UPDATE LOGIN SET LOGIN = ?, PASSWORD = ?");
             st.setString(1, login.getUser());
             st.setString(2, login.getPassword());
-            st.setString(3, login.getConfirmPassword());   
             st.executeUpdate();
             
             return true;
