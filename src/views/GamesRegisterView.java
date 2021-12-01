@@ -345,7 +345,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 
             } else {
             
-                JOptionPane.showMessageDialog(null, "Save Error!!!");
+                JOptionPane.showMessageDialog(null, "Update Error!!!");
             
             }
         } else {

@@ -20,12 +20,12 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private void initComponents() {
 
         btnConsult = new javax.swing.JButton();
-        lblLogin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         txtLogin = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
+        lblLogin1 = new javax.swing.JLabel();
 
         btnConsult.setText("Consult");
         btnConsult.addActionListener(new java.awt.event.ActionListener() {
@@ -37,13 +37,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        lblLogin.setText("Login");
-        getContentPane().add(lblLogin);
-        lblLogin.setBounds(40, 90, 110, 16);
-
         lblPassword.setText("Password");
         getContentPane().add(lblPassword);
-        lblPassword.setBounds(40, 140, 70, 16);
+        lblPassword.setBounds(40, 130, 70, 16);
 
         txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +47,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtLogin);
-        txtLogin.setBounds(190, 90, 160, 22);
+        txtLogin.setBounds(190, 80, 160, 22);
         getContentPane().add(txtPassword);
-        txtPassword.setBounds(190, 140, 160, 22);
+        txtPassword.setBounds(190, 130, 160, 22);
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +58,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnDelete);
-        btnDelete.setBounds(100, 220, 72, 22);
+        btnDelete.setBounds(110, 220, 72, 22);
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +67,11 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnUpdate);
-        btnUpdate.setBounds(200, 220, 72, 22);
+        btnUpdate.setBounds(220, 220, 72, 22);
+
+        lblLogin1.setText("Login");
+        getContentPane().add(lblLogin1);
+        lblLogin1.setBounds(40, 80, 110, 16);
 
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
@@ -106,7 +106,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
             
             if(result == true) {
             
-                JOptionPane.showMessageDialog(null, "Game Deleted!!!");
+                JOptionPane.showMessageDialog(null, "User Deleted!!!");
             
             } else {
             
@@ -159,38 +159,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
-        
-        Login login;
-        LoginRegisterDao loginDao;
-        boolean result;
-        String user;
-        
-        user = txtLogin.getText();
-        
-        loginDao = new LoginRegisterDao();
-        result = loginDao.Connect();
-        
-        if(result == true) {
-        
-            login = loginDao.consult(user);
-            
-            if (login != null) {
-            
-                txtLogin.setText(login.getUser());
-                txtPassword.setText(login.getPassword());
-            
-            } else {
-            
-                JOptionPane.showMessageDialog(null, "Game not found!");
-            
-            } 
-            
-        } else {
-            
-                    JOptionPane.showMessageDialog(null, "Connection Error!");
-                    
-            }
-        
+
     }//GEN-LAST:event_btnConsultActionPerformed
 
     /**
@@ -232,7 +201,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnConsult;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblLogin1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtPassword;

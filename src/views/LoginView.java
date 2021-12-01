@@ -1,5 +1,12 @@
 package views;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class LoginView extends javax.swing.JFrame {
 
     public LoginView() {
@@ -130,7 +137,43 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSigninActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        // TODO add your handling code here:
+        
+        try {
+            
+            Connection conn;
+            PreparedStatement st;
+            ResultSet rs;
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/access", "root", "pokemon45");
+            st = conn.prepareStatement("SELECT * FROM LOGIN WHERE LOGIN = ? AND PASSWORD = ?");
+            st.setString(1,txtLogin.getText());
+            st.setString(2,txtPassword.getText());
+            rs = st.executeQuery();
+            
+            if(rs.next()){
+                
+                if(rs.getString("position") == null) {
+            
+                JOptionPane.showMessageDialog(null, "User without position signed!");
+            
+            }
+                
+                MenuView menu;
+                menu = new MenuView(rs.getString("login"), rs.getString("position"));
+                menu.setVisible(true);
+                
+            }else{
+            
+                JOptionPane.showMessageDialog(null,"User/password not found!");
+                
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            
+                JOptionPane.showMessageDialog(null, "Conection Erro!!!");
+            
+        }
+                
     }//GEN-LAST:event_btnEnterActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed

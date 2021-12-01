@@ -121,6 +121,7 @@ public class GamesRegisterDao {
     public boolean update(Game game) {
     
         try {
+            
             Connect();
             
             st = conn.prepareStatement("UPDATE GAMES SET NAME = ?, DEVELOPER = ?, LAUNCHDATE = ?, SYNOPSIS = ?, VALUE = ?, POPULARITY = ?, SIZE = ?");

@@ -4,6 +4,7 @@ public class Login {
     
     private String user;
     private String password;
+    private String position;
     
     public String getUser () {
         
@@ -27,6 +28,18 @@ public class Login {
     
         this.password = password;
         
+    }
+    
+    public String getPosition () {
+    
+        return position;
+        
+    }
+    
+    public void setPosition (String position) {
+        
+        this.position = position;
+    
     }
     
 }
