@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import persistence.GamesRegisterDao;
 import persistence.Game;
@@ -8,6 +9,12 @@ public class GamesRegisterView extends javax.swing.JFrame {
 
     public GamesRegisterView() {
         initComponents();
+        
+        btnConsult.setBackground(new Color(1,0,0,0));
+        btnDelete.setBackground(new Color(1,0,0,0));
+        btnSave.setBackground(new Color(1,0,0,0));
+        btnUpdate.setBackground(new Color(1,0,0,0));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -92,8 +99,8 @@ public class GamesRegisterView extends javax.swing.JFrame {
         getContentPane().add(lblSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 60, 20));
         getContentPane().add(txtValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 300, -1));
 
-        btnSave.setBackground(new java.awt.Color(255, 153, 0));
-        btnSave.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
+        btnSave.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -101,10 +108,10 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 441, 70, 10));
+        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 100, 30));
 
-        btnUpdate.setBackground(new java.awt.Color(51, 204, 0));
-        btnUpdate.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -112,10 +119,10 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, -1, 20));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 110, 40));
 
-        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
-        btnDelete.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelete.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +130,10 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, 20));
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, -1, -1));
 
-        btnConsult.setBackground(new java.awt.Color(183, 5, 176));
-        btnConsult.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnConsult.setBackground(new java.awt.Color(255, 255, 255));
+        btnConsult.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnConsult.setForeground(new java.awt.Color(255, 255, 255));
         btnConsult.setText("Consult");
         btnConsult.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +141,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 btnConsultActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConsult, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
+        getContentPane().add(btnConsult, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, -1, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gamesManagementDark.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 483, 504));

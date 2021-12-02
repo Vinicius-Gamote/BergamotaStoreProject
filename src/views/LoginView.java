@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,9 @@ public class LoginView extends javax.swing.JFrame {
 
     public LoginView() {
         initComponents();
+        
+        btnEnter.setBackground(new Color(1,0,0,0));
+        btnSignIn.setBackground(new Color(1,0,0,0));
     }
 
     /**
@@ -22,10 +26,10 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSignin = new javax.swing.JButton();
         btnEnter = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
         txtLogin = new javax.swing.JTextField();
+        btnSignIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -35,21 +39,7 @@ public class LoginView extends javax.swing.JFrame {
         setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSignin.setBackground(new java.awt.Color(51, 204, 0));
-        btnSignin.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
-        btnSignin.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignin.setText("Sign In");
-        btnSignin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnSignin.setMargin(new java.awt.Insets(2, 2, 0, 2));
-        btnSignin.setOpaque(true);
-        btnSignin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSigninActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnSignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 374, 220, 40));
-
-        btnEnter.setBackground(new java.awt.Color(255, 153, 0));
+        btnEnter.setBackground(new java.awt.Color(255, 255, 255));
         btnEnter.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
         btnEnter.setForeground(new java.awt.Color(255, 255, 255));
         btnEnter.setText("Enter");
@@ -59,7 +49,7 @@ public class LoginView extends javax.swing.JFrame {
                 btnEnterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 270, 40));
+        getContentPane().add(btnEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 270, 50));
 
         txtPassword.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -77,20 +67,24 @@ public class LoginView extends javax.swing.JFrame {
         });
         getContentPane().add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 290, 40));
 
+        btnSignIn.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignIn.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
+        btnSignIn.setForeground(new java.awt.Color(255, 255, 255));
+        btnSignIn.setText("Sign In");
+        btnSignIn.setBorder(null);
+        btnSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignInActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 270, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/loginViewDark.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 450));
 
-        setSize(new java.awt.Dimension(354, 455));
+        setSize(new java.awt.Dimension(354, 459));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
-        
-        SignView sign;
-        sign = new SignView();
-        sign.setVisible(true);
-        
-    }//GEN-LAST:event_btnSigninActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         
@@ -140,6 +134,14 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLoginActionPerformed
 
+    private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
+        
+        SignView sign;
+        sign = new SignView();
+        sign.setVisible(true);
+        
+    }//GEN-LAST:event_btnSignInActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,7 +179,7 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnter;
-    private javax.swing.JButton btnSignin;
+    private javax.swing.JButton btnSignIn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtPassword;

@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +13,10 @@ public class GamesView extends javax.swing.JFrame {
 
     public GamesView() {
         initComponents();
+        
+        btnClean.setBackground(new Color(1,0,0,0));
+        btnSearch.setBackground(new Color(1,0,0,0));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -36,7 +41,7 @@ public class GamesView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 150, -1, -1));
 
-        btnSearch.setBackground(new java.awt.Color(255, 153, 0));
+        btnSearch.setBackground(new java.awt.Color(255, 255, 255));
         btnSearch.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -46,10 +51,9 @@ public class GamesView extends javax.swing.JFrame {
                 btnSearchActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 103, 30));
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 103, 40));
 
         tblGames.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        tblGames.setForeground(new java.awt.Color(255, 255, 255));
         tblGames.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -72,7 +76,7 @@ public class GamesView extends javax.swing.JFrame {
         cmbConsultType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "all games", "by Developers", "by Popularity" }));
         getContentPane().add(cmbConsultType, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 24, 260, 30));
 
-        btnClean.setBackground(new java.awt.Color(51, 204, 0));
+        btnClean.setBackground(new java.awt.Color(255, 255, 255));
         btnClean.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         btnClean.setForeground(new java.awt.Color(255, 255, 255));
         btnClean.setText("Clean");
@@ -82,7 +86,7 @@ public class GamesView extends javax.swing.JFrame {
                 btnCleanActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClean, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 103, 30));
+        getContentPane().add(btnClean, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 103, 40));
 
         lblDeveloper.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         lblDeveloper.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,7 +94,6 @@ public class GamesView extends javax.swing.JFrame {
         getContentPane().add(lblDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 69, 185, 24));
 
         txtDeveloper.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        txtDeveloper.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 260, 30));
 
         lblDeveloper1.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
@@ -99,7 +102,6 @@ public class GamesView extends javax.swing.JFrame {
         getContentPane().add(lblDeveloper1, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 108, 185, 24));
 
         txtPopularity.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        txtPopularity.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtPopularity, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 112, 260, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gamesViewDark.png"))); // NOI18N

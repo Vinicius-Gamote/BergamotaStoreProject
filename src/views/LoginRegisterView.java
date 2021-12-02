@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import persistence.Login;
 import persistence.LoginRegisterDao;
@@ -8,6 +9,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
 
     public LoginRegisterView() {
         initComponents();
+        
+        btnDelete.setBackground(new Color(1,0,0,0));
+        btnUpdate.setBackground(new Color(1,0,0,0));
     }
 
     /**
@@ -39,7 +43,6 @@ public class LoginRegisterView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtLogin.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        txtLogin.setForeground(new java.awt.Color(255, 255, 255));
         txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLoginActionPerformed(evt);
@@ -48,10 +51,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
         getContentPane().add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, 280, 50));
 
         txtPassword.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 162, 280, 50));
 
-        btnDelete.setBackground(new java.awt.Color(51, 204, 0));
+        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
         btnDelete.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
@@ -60,9 +62,9 @@ public class LoginRegisterView extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 378, 210, 40));
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 210, 50));
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
+        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdate.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
@@ -72,7 +74,7 @@ public class LoginRegisterView extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 250, 30));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 250, 50));
 
         cmbPosition.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         cmbPosition.setForeground(new java.awt.Color(255, 255, 255));

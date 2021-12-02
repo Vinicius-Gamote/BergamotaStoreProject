@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import persistence.Login;
 import persistence.LoginRegisterDao;
@@ -8,6 +9,8 @@ public class SignView extends javax.swing.JFrame {
 
     public SignView() {
         initComponents();
+        
+        btnSignUp.setBackground(new Color(1,0,0,0));
     }
 
     /**
@@ -22,7 +25,7 @@ public class SignView extends javax.swing.JFrame {
         txtLogin = new javax.swing.JTextField();
         btnSignUp = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sign In");
@@ -36,10 +39,9 @@ public class SignView extends javax.swing.JFrame {
         });
         getContentPane().add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 280, 40));
 
-        btnSignUp.setBackground(new java.awt.Color(0, 255, 0));
+        btnSignUp.setBackground(new java.awt.Color(255, 255, 255));
         btnSignUp.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
         btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignUp.setText("Sign Up");
         btnSignUp.setBorder(null);
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +53,8 @@ public class SignView extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 280, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/createAccountDark.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/createAccount.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
 
         setSize(new java.awt.Dimension(713, 456));
         setLocationRelativeTo(null);
@@ -144,7 +145,7 @@ public class SignView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignUp;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
