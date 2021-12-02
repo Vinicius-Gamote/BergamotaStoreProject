@@ -4,7 +4,7 @@ public class Game {
     
     private String name;
     private String developer;
-    private double launchDate;
+    private int launchDate;
     private String synopsis;
     private double value;
     private int popularity;
@@ -35,13 +35,13 @@ public class Game {
     
     }
     
-    public double getLaunchDate() {
+    public int getLaunchDate() {
     
         return launchDate;
     
     }
     
-    public void setLaunchDate(double launchDate) {
+    public void setLaunchDate(int launchDate) {
     
         this.launchDate = launchDate;
     

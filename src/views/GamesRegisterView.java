@@ -39,7 +39,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnConsult = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Games Register");
@@ -66,7 +66,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
                 txtNameActionPerformed(evt);
             }
         });
-        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 300, -1));
+        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 300, -1));
         getContentPane().add(txtDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 300, -1));
 
         txtSynopsis.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +75,8 @@ public class GamesRegisterView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtSynopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 300, 60));
-        getContentPane().add(txtPopularity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 300, -1));
-        getContentPane().add(txtSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 300, -1));
+        getContentPane().add(txtPopularity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 300, -1));
+        getContentPane().add(txtSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 300, -1));
 
         lblSynopsis.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         lblSynopsis.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,7 +97,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
         lblSize.setForeground(new java.awt.Color(255, 255, 255));
         lblSize.setText("Size");
         getContentPane().add(lblSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 60, 20));
-        getContentPane().add(txtValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 300, -1));
+        getContentPane().add(txtValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 300, -1));
 
         btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
@@ -143,8 +143,8 @@ public class GamesRegisterView extends javax.swing.JFrame {
         });
         getContentPane().add(btnConsult, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, -1, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gamesManagementDark.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 483, 504));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gamesManagement.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 510));
 
         setSize(new java.awt.Dimension(499, 512));
         setLocationRelativeTo(null);
@@ -175,7 +175,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
         game = new Game();
         game.setName(txtName.getText());
         game.setDeveloper(txtDeveloper.getText());
-        game.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
+        game.setLaunchDate(Integer.parseInt(txtLaunchDate.getText()));
         game.setSynopsis(txtSynopsis.getText());
         game.setValue(Double.parseDouble(txtValue.getText()));
         game.setPopularity(Integer.parseInt(txtPopularity.getText()));
@@ -290,7 +290,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
         game = new Game();
         game.setName(txtName.getText());
         game.setDeveloper(txtDeveloper.getText());
-        game.setLaunchDate(Double.parseDouble(txtLaunchDate.getText()));
+        game.setLaunchDate(Integer.parseInt(txtLaunchDate.getText()));
         game.setSynopsis(txtSynopsis.getText());
         game.setValue(Double.parseDouble(txtValue.getText()));
         game.setPopularity(Integer.parseInt(txtPopularity.getText()));
@@ -364,7 +364,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDeveloper;
     private javax.swing.JLabel lblLaunchData;
     private javax.swing.JLabel lblName;

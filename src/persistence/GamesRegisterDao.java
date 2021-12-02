@@ -42,7 +42,7 @@ public class GamesRegisterDao {
             
             st.setString(1, game.getName());
             st.setString(2, game.getDeveloper());
-            st.setDouble(3, game.getLaunchDate());
+            st.setInt(3, game.getLaunchDate());
             st.setString(4, game.getSynopsis());
             st.setDouble(5, game.getValue());
             st.setInt(6, game.getPopularity());
@@ -95,7 +95,7 @@ public class GamesRegisterDao {
                 game = new Game();
                 game.setName(rs.getString("name"));
                 game.setDeveloper(rs.getString("developer"));
-                game.setLaunchDate(rs.getDouble("launchDate"));
+                game.setLaunchDate(rs.getInt("launchDate"));
                 game.setSynopsis(rs.getString("synopsis"));
                 game.setValue(rs.getDouble("value"));
                 game.setPopularity(rs.getInt("popularity"));
@@ -127,7 +127,7 @@ public class GamesRegisterDao {
             st = conn.prepareStatement("UPDATE GAMES SET NAME = ?, DEVELOPER = ?, LAUNCHDATE = ?, SYNOPSIS = ?, VALUE = ?, POPULARITY = ?, SIZE = ? WHERE NAME = ?");
             st.setString(1, game.getName());
             st.setString(2, game.getDeveloper());
-            st.setDouble(3, game.getLaunchDate());
+            st.setInt(3, game.getLaunchDate());
             st.setString(4, game.getSynopsis());
             st.setDouble(5, game.getValue());
             st.setInt(6, game.getPopularity());
