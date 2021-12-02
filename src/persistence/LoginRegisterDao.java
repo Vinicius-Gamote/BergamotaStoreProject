@@ -115,10 +115,11 @@ public class LoginRegisterDao {
             
             Connect();
             
-            st = conn.prepareStatement("UPDATE LOGIN SET LOGIN = ?, PASSWORD = ?, POSITION = ?");
+            st = conn.prepareStatement("UPDATE LOGIN SET LOGIN = ?, PASSWORD = ?, POSITION = ? WHERE LOGIN = ?");
             st.setString(1, login.getUser());
             st.setString(2, login.getPassword());
             st.setString(3, login.getPosition());
+            st.setString(4, login.getUser());
             st.executeUpdate();
             
             return true;

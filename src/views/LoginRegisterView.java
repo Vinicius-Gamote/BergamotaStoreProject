@@ -20,12 +20,12 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private void initComponents() {
 
         btnConsult = new javax.swing.JButton();
-        lblPassword = new javax.swing.JLabel();
         txtLogin = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        lblLogin1 = new javax.swing.JLabel();
+        cmbPosition = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         btnConsult.setText("Consult");
         btnConsult.addActionListener(new java.awt.event.ActionListener() {
@@ -34,46 +34,60 @@ public class LoginRegisterView extends javax.swing.JFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login Manage");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblPassword.setText("Password");
-        getContentPane().add(lblPassword);
-        lblPassword.setBounds(40, 130, 70, 16);
-
+        txtLogin.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
+        txtLogin.setForeground(new java.awt.Color(255, 255, 255));
         txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(txtLogin);
-        txtLogin.setBounds(190, 80, 160, 22);
-        getContentPane().add(txtPassword);
-        txtPassword.setBounds(190, 130, 160, 22);
+        getContentPane().add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, 280, 50));
 
+        txtPassword.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 162, 280, 50));
+
+        btnDelete.setBackground(new java.awt.Color(51, 204, 0));
+        btnDelete.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete);
-        btnDelete.setBounds(110, 220, 72, 22);
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 378, 210, 40));
 
+        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
+        btnUpdate.setFont(new java.awt.Font("Candara", 1, 34)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
+        btnUpdate.setBorder(null);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate);
-        btnUpdate.setBounds(220, 220, 72, 22);
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 250, 30));
 
-        lblLogin1.setText("Login");
-        getContentPane().add(lblLogin1);
-        lblLogin1.setBounds(40, 80, 110, 16);
+        cmbPosition.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
+        cmbPosition.setForeground(new java.awt.Color(255, 255, 255));
+        cmbPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Customer" }));
+        cmbPosition.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPositionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmbPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 280, 50));
 
-        setSize(new java.awt.Dimension(416, 308));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\vinic\\Documents\\Códigos\\Java\\BergamotaStore\\src\\image\\userManagementDark.jpeg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 450));
+
+        setSize(new java.awt.Dimension(355, 461));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -130,7 +144,8 @@ public class LoginRegisterView extends javax.swing.JFrame {
         
         login = new Login();
         login.setUser(txtLogin.getText());
-        login.setPassword(txtPassword.getText());      
+        login.setPassword(txtPassword.getText());
+        login.setPosition(cmbPosition.getSelectedItem().toString());
         
         loginDao = new LoginRegisterDao();
         result = loginDao.Connect();
@@ -161,6 +176,10 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
 
     }//GEN-LAST:event_btnConsultActionPerformed
+
+    private void cmbPositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPositionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPositionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,8 +220,8 @@ public class LoginRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnConsult;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel lblLogin1;
-    private javax.swing.JLabel lblPassword;
+    private javax.swing.JComboBox<String> cmbPosition;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables

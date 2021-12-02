@@ -124,14 +124,15 @@ public class GamesRegisterDao {
             
             Connect();
             
-            st = conn.prepareStatement("UPDATE GAMES SET NAME = ?, DEVELOPER = ?, LAUNCHDATE = ?, SYNOPSIS = ?, VALUE = ?, POPULARITY = ?, SIZE = ?");
+            st = conn.prepareStatement("UPDATE GAMES SET NAME = ?, DEVELOPER = ?, LAUNCHDATE = ?, SYNOPSIS = ?, VALUE = ?, POPULARITY = ?, SIZE = ? WHERE NAME = ?");
             st.setString(1, game.getName());
             st.setString(2, game.getDeveloper());
             st.setDouble(3, game.getLaunchDate());
             st.setString(4, game.getSynopsis());
             st.setDouble(5, game.getValue());
             st.setInt(6, game.getPopularity());
-            st.setString(7, game.getSize());            
+            st.setString(7, game.getSize());
+            st.setString(8, game.getName());            
             st.executeUpdate();
             
             return true;

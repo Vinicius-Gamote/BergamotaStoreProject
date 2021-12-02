@@ -28,161 +28,118 @@ public class GamesRegisterView extends javax.swing.JFrame {
         lblPopularity = new javax.swing.JLabel();
         lblSize = new javax.swing.JLabel();
         txtValue = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnConsult = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Games Register");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblName.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
+        getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 60, 20));
 
+        lblDeveloper.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblDeveloper.setForeground(new java.awt.Color(255, 255, 255));
         lblDeveloper.setText("Developer");
+        getContentPane().add(lblDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 70, 20));
 
+        lblLaunchData.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblLaunchData.setForeground(new java.awt.Color(255, 255, 255));
         lblLaunchData.setText("Launch Date");
+        getContentPane().add(lblLaunchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 70, -1));
+        getContentPane().add(txtLaunchDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 300, -1));
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
+        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 300, -1));
+        getContentPane().add(txtDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 300, -1));
 
         txtSynopsis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSynopsisActionPerformed(evt);
             }
         });
+        getContentPane().add(txtSynopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 300, 60));
+        getContentPane().add(txtPopularity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 300, -1));
+        getContentPane().add(txtSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 300, -1));
 
+        lblSynopsis.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblSynopsis.setForeground(new java.awt.Color(255, 255, 255));
         lblSynopsis.setText("Synopsis");
+        getContentPane().add(lblSynopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 60, 30));
 
+        lblValue.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(255, 255, 255));
         lblValue.setText("Value");
+        getContentPane().add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 70, 20));
 
+        lblPopularity.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblPopularity.setForeground(new java.awt.Color(255, 255, 255));
         lblPopularity.setText("Popularity");
+        getContentPane().add(lblPopularity, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 70, 20));
 
+        lblSize.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        lblSize.setForeground(new java.awt.Color(255, 255, 255));
         lblSize.setText("Size");
+        getContentPane().add(lblSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 60, 20));
+        getContentPane().add(txtValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 300, -1));
 
-        jLabel1.setText("Games Register");
-
+        btnSave.setBackground(new java.awt.Color(255, 153, 0));
+        btnSave.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 441, 70, 10));
 
+        btnUpdate.setBackground(new java.awt.Color(51, 204, 0));
+        btnUpdate.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, -1, 20));
 
+        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, 20));
 
+        btnConsult.setBackground(new java.awt.Color(183, 5, 176));
+        btnConsult.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
+        btnConsult.setForeground(new java.awt.Color(255, 255, 255));
         btnConsult.setText("Consult");
         btnConsult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultActionPerformed(evt);
             }
         });
+        getContentPane().add(btnConsult, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblSynopsis, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPopularity, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblValue, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSize, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtSynopsis, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPopularity, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSize, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValue, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblLaunchData)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addComponent(txtLaunchDate, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblDeveloper)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtDeveloper, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(158, 158, 158))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSave)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDelete)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnConsult)
-                        .addGap(26, 26, 26))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDeveloper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDeveloper))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLaunchData)
-                    .addComponent(txtLaunchDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSynopsis, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSynopsis))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblValue))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPopularity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPopularity))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSize)
-                    .addComponent(txtSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnConsult))
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gamesManagementDark.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 483, 504));
 
-        setSize(new java.awt.Dimension(416, 547));
+        setSize(new java.awt.Dimension(499, 512));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -400,7 +357,7 @@ public class GamesRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblDeveloper;
     private javax.swing.JLabel lblLaunchData;
     private javax.swing.JLabel lblName;
